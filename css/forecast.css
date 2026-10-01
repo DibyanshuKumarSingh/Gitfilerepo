@@ -1,0 +1,498 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  min-height: 100vh;
+
+  color: white;
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020617,
+      #075985,
+      #0ea5e9
+    );
+}
+
+
+.forecast-page {
+
+  min-height: 100vh;
+
+  padding-bottom: 30px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+  width:
+    min(1150px, calc(100% - 40px));
+
+  height: 64px;
+
+  margin: 22px auto;
+
+  padding:
+    0 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border:
+    1px solid
+    rgba(255,255,255,.2);
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  backdrop-filter:
+    blur(18px);
+}
+
+
+.logo {
+
+  font-size: 23px;
+
+  font-weight: 800;
+}
+
+
+.logo span {
+  color: #fde047;
+}
+
+
+.nav-links {
+
+  display: flex;
+
+  gap: 30px;
+}
+
+
+.nav-links a {
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  opacity: .65;
+}
+
+
+.nav-links a:hover,
+.nav-links .active {
+
+  color: #fde047;
+
+  opacity: 1;
+}
+
+
+.live {
+
+  font-size: 10px;
+
+  display: flex;
+
+  gap: 7px;
+
+  align-items: center;
+}
+
+
+.live span {
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #4ade80;
+
+  box-shadow:
+    0 0 10px #4ade80;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+
+  text-align: center;
+
+  padding:
+    35px 20px 25px;
+}
+
+
+.location {
+
+  display: inline-block;
+
+  padding:
+    8px 15px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  font-size: 12px;
+}
+
+
+header h1 {
+
+  margin-top: 20px;
+
+  font-size:
+    clamp(38px, 6vw, 68px);
+
+  letter-spacing: -3px;
+}
+
+
+header p {
+
+  margin-top: 10px;
+
+  opacity: .65;
+}
+
+
+/* ================= SECTION ================= */
+
+.section {
+
+  width:
+    min(1100px, 92%);
+
+  margin:
+    25px auto;
+}
+
+
+.section-title {
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.section-title h2 {
+
+  font-size: 22px;
+}
+
+
+.section-title span {
+
+  font-size: 11px;
+
+  opacity: .5;
+}
+
+
+/* ================= HOURLY ================= */
+
+.hourly {
+
+  display: flex;
+
+  gap: 12px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+}
+
+
+.hourly::-webkit-scrollbar {
+
+  height: 5px;
+}
+
+
+.hourly::-webkit-scrollbar-thumb {
+
+  background:
+    rgba(255,255,255,.25);
+
+  border-radius: 20px;
+}
+
+
+.hour-card {
+
+  min-width: 120px;
+
+  padding: 20px 15px;
+
+  text-align: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  backdrop-filter:
+    blur(15px);
+
+  transition: .3s;
+}
+
+
+.hour-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,.18);
+}
+
+
+.hour-card .hour {
+
+  font-size: 11px;
+
+  opacity: .6;
+}
+
+
+.hour-card .icon {
+
+  margin:
+    13px 0;
+
+  font-size: 30px;
+}
+
+
+.hour-card strong {
+
+  font-size: 20px;
+}
+
+
+.hour-card small {
+
+  display: block;
+
+  margin-top: 6px;
+
+  opacity: .55;
+}
+
+
+/* ================= DAILY ================= */
+
+.daily {
+
+  display: grid;
+
+  gap: 10px;
+}
+
+
+.day-card {
+
+  padding:
+    18px 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    .5fr
+    .5fr
+    .7fr
+    .7fr;
+
+  align-items: center;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
+  transition: .3s;
+}
+
+
+.day-card:hover {
+
+  transform:
+    translateX(5px);
+
+  background:
+    rgba(255,255,255,.17);
+}
+
+
+.day {
+
+  font-weight: 700;
+}
+
+
+.day small {
+
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 10px;
+
+  opacity: .5;
+}
+
+
+.day-icon {
+
+  font-size: 28px;
+
+  text-align: center;
+}
+
+
+.day-temp {
+
+  text-align: center;
+
+  font-size: 17px;
+}
+
+
+.day-rain {
+
+  text-align: center;
+
+  font-size: 12px;
+
+  opacity: .7;
+}
+
+
+.day-wind {
+
+  text-align: right;
+
+  font-size: 12px;
+
+  opacity: .7;
+}
+
+
+footer {
+
+  text-align: center;
+
+  padding: 25px;
+
+  font-size: 10px;
+
+  opacity: .4;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .navbar {
+
+    width:
+      calc(100% - 24px);
+
+    margin-top: 12px;
+  }
+
+
+  .nav-links {
+
+    display: none;
+  }
+
+
+  .section {
+
+    width: 94%;
+  }
+
+
+  .day-card {
+
+    grid-template-columns:
+      1fr
+      auto
+      auto;
+
+    gap: 10px;
+  }
+
+
+  .day {
+
+    grid-column: 1 / 2;
+  }
+
+
+  .day-icon {
+
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+
+  .day-temp {
+
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+
+  .day-rain,
+  .day-wind {
+
+    display: none;
+  }
+
+}
+

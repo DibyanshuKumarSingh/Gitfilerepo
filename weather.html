@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Weather | SKY°</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/weather.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="weather-page">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+        SKY<span>°</span>
+      </div>
+
+      <div class="nav-links">
+
+        <a href="./master.html">
+          Home
+        </a>
+
+        <a
+          href="./weather.html"
+          class="active"
+        >
+          Weather
+        </a>
+
+        <a href="./forecast.html">
+          Forecast
+        </a>
+
+      </div>
+
+      <div class="live">
+        <span></span>
+        LIVE
+      </div>
+
+    </nav>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <section class="weather-header">
+
+      <div class="location">
+        📍
+        <span id="location">
+          Loading...
+        </span>
+      </div>
+
+      <h1>
+        Current Weather
+      </h1>
+
+      <p>
+        Real-time atmospheric conditions
+      </p>
+
+      <div class="clock">
+
+        <strong id="time">
+          --:--:--
+        </strong>
+
+        <small id="date">
+          Loading...
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MAIN WEATHER ================= -->
+
+    <section class="current-weather">
+
+
+      <!-- MAIN -->
+
+      <div class="main-weather">
+
+        <div
+          class="weather-icon"
+          id="weatherIcon"
+        >
+          ☀️
+        </div>
+
+        <div class="temperature">
+
+          <span id="temperature">
+            --
+          </span>
+
+          <sup>°C</sup>
+
+        </div>
+
+        <h2 id="description">
+          Loading weather...
+        </h2>
+
+      </div>
+
+
+      <!-- DETAILS -->
+
+      <div class="details-grid">
+
+
+        <div class="weather-card">
+
+          <span>🌡️</span>
+
+          <small>
+            Feels Like
+          </small>
+
+          <strong id="feels">
+            --°C
+          </strong>
+
+        </div>
+
+
+        <div class="weather-card">
+
+          <span>💧</span>
+
+          <small>
+            Humidity
+          </small>
+
+          <strong id="humidity">
+            --%
+          </strong>
+
+        </div>
+
+
+        <div class="weather-card">
+
+          <span>💨</span>
+
+          <small>
+            Wind Speed
+          </small>
+
+          <strong id="wind">
+            -- km/h
+          </strong>
+
+        </div>
+
+
+        <div class="weather-card">
+
+          <span>🌧️</span>
+
+          <small>
+            Rain Chance
+          </small>
+
+          <strong id="rain">
+            --%
+          </strong>
+
+        </div>
+
+
+        <div class="weather-card">
+
+          <span>🌅</span>
+
+          <small>
+            Sunrise
+          </small>
+
+          <strong id="sunrise">
+            --:--
+          </strong>
+
+        </div>
+
+
+        <div class="weather-card">
+
+          <span>🌇</span>
+
+          <small>
+            Sunset
+          </small>
+
+          <strong id="sunset">
+            --:--
+          </strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <footer>
+      Weather data powered by Open-Meteo
+    </footer>
+
+  </div>
+
+
+  <script src="./js/weather-page.js"></script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Forecast | SKY°</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/forecast.css"
+  >
+
+</head>
+
+<body>
+
+  <div class="forecast-page">
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+        SKY<span>°</span>
+      </div>
+
+      <div class="nav-links">
+
+        <a href="./master.html">
+          Home
+        </a>
+
+        <a href="./weather.html">
+          Weather
+        </a>
+
+        <a
+          href="./forecast.html"
+          class="active"
+        >
+          Forecast
+        </a>
+
+      </div>
+
+      <div class="live">
+        <span></span>
+        LIVE
+      </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div class="location">
+        📍
+        <span id="location">
+          Loading...
+        </span>
+      </div>
+
+      <h1>
+        Weather Forecast
+      </h1>
+
+      <p>
+        Plan your day with the upcoming forecast
+      </p>
+
+    </header>
+
+
+    <!-- HOURLY -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          Next 24 Hours
+        </h2>
+
+        <span>
+          Hourly forecast
+        </span>
+
+      </div>
+
+      <div
+        class="hourly"
+        id="hourly"
+      >
+        Loading...
+      </div>
+
+    </section>
+
+
+    <!-- DAILY -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          7 Day Forecast
+        </h2>
+
+        <span>
+          Daily weather
+        </span>
+
+      </div>
+
+      <div
+        class="daily"
+        id="daily"
+      >
+        Loading...
+      </div>
+
+    </section>
+
+
+    <footer>
+      Weather data powered by Open-Meteo
+    </footer>
+
+  </div>
+
+
+  <script src="./js/forecast.js"></script>
+
+</body>
+
+</html>
+

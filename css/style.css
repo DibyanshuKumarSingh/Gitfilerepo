@@ -1,0 +1,1081 @@
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow: hidden;
+}
+
+
+body {
+  background: #07111f;
+}
+
+
+/* =====================================================
+   SKY
+===================================================== */
+
+.sky {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      180deg,
+      #38bdf8 0%,
+      #7dd3fc 38%,
+      #bae6fd 62%,
+      #fbbf72 100%
+    );
+
+  transition:
+    background 2s ease;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  position: absolute;
+
+  top: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(1180px, calc(100% - 40px));
+
+  height: 64px;
+
+  padding: 0 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #ffe27a;
+}
+
+
+/* NAV LINKS */
+
+.nav-links {
+  display: flex;
+
+  gap: 32px;
+}
+
+.nav-links a {
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  opacity: .85;
+
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+
+  color: #ffe27a;
+}
+
+
+/* LIVE */
+
+.live-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  font-weight: 700;
+}
+
+.live-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #5cff8d;
+
+  box-shadow:
+    0 0 10px #5cff8d;
+
+  animation:
+    livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .35;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+  position: relative;
+
+  z-index: 20;
+
+  width: min(1000px, 94%);
+
+  height: 100%;
+
+  margin: auto;
+
+  padding-top: 110px;
+
+  display: flex;
+
+  align-items: center;
+
+  flex-direction: column;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 5px;
+
+  padding: 8px 15px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(255, 255, 255, .13);
+
+  border:
+    1px solid rgba(255,255,255,.18);
+
+  backdrop-filter:
+    blur(10px);
+
+  font-size: 13px;
+
+  color:
+    rgba(255,255,255,.9);
+}
+
+
+/* =====================================================
+   CLOCK
+===================================================== */
+
+.time-box {
+  margin-top: 12px;
+}
+
+#currentTime {
+
+  font-size:
+    clamp(32px, 5vw, 54px);
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+
+  text-shadow:
+    0 5px 25px
+    rgba(0,0,0,.18);
+}
+
+.time-box small {
+
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 12px;
+
+  opacity: .75;
+}
+
+
+/* =====================================================
+   WEATHER MAIN
+===================================================== */
+
+.weather-main {
+
+  margin-top: 12px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* ICON */
+
+.weather-icon {
+
+  font-size:
+    clamp(42px, 6vw, 70px);
+
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 8px 15px
+      rgba(0,0,0,.15)
+    );
+
+  animation:
+    iconFloat 4s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px);
+  }
+
+}
+
+
+/* TEMPERATURE */
+
+.temperature {
+
+  margin-top: 5px;
+
+  font-size:
+    clamp(52px, 8vw, 92px);
+
+  font-weight: 800;
+
+  line-height: .9;
+
+  letter-spacing: -5px;
+
+  text-shadow:
+    0 8px 30px
+    rgba(0,0,0,.18);
+}
+
+.temperature sup {
+
+  font-size:
+    clamp(20px, 3vw, 30px);
+
+  vertical-align: top;
+
+  letter-spacing: 0;
+}
+
+
+/* DESCRIPTION */
+
+.weather-description {
+
+  margin-top: 10px;
+
+  font-size: 14px;
+
+  opacity: .85;
+}
+
+
+/* =====================================================
+   WEATHER GRID
+===================================================== */
+
+.weather-grid {
+
+  width: 100%;
+
+  max-width: 760px;
+
+  margin-top: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+
+.weather-card {
+
+  min-height: 76px;
+
+  padding:
+    13px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-align: left;
+
+  border:
+    1px solid
+    rgba(255,255,255,.2);
+
+  border-radius: 17px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  backdrop-filter:
+    blur(15px);
+
+  -webkit-backdrop-filter:
+    blur(15px);
+
+  transition:
+    transform .3s,
+    background .3s;
+}
+
+
+.weather-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,.19);
+}
+
+
+.card-icon {
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,.12);
+
+  font-size: 20px;
+}
+
+
+.weather-card small {
+
+  display: block;
+
+  font-size: 10px;
+
+  opacity: .65;
+
+  margin-bottom: 4px;
+}
+
+
+.weather-card strong {
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   SUN INFO
+===================================================== */
+
+.sun-info {
+
+  width: 100%;
+
+  max-width: 760px;
+
+  margin-top: 17px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  font-size: 11px;
+
+  opacity: .9;
+}
+
+
+.sun-info > div:first-child,
+.sun-info > div:last-child {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.sun-info strong {
+
+  font-size: 11px;
+}
+
+
+/* SUN LINE */
+
+.sun-line {
+  width: 100%;
+}
+
+
+.sun-progress {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 4px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.25);
+}
+
+
+.sun-progress-fill {
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    rgba(255,255,255,.9);
+
+  transition:
+    width 1s linear;
+}
+
+
+.sun-marker {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 0%;
+
+  transform:
+    translate(-50%, -50%);
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 0 15px
+    rgba(255,220,100,.9);
+
+  transition:
+    left 1s linear;
+}
+
+
+.east-west {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 6px;
+
+  font-size: 9px;
+
+  opacity: .55;
+}
+
+
+/* =====================================================
+   SUN
+===================================================== */
+
+.sun {
+
+  position: absolute;
+
+  width:
+    clamp(65px, 8vw, 110px);
+
+  height:
+    clamp(65px, 8vw, 110px);
+
+  left: 50%;
+
+  top: 45%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fffde0 0%,
+      #fff59d 35%,
+      #ffc928 65%,
+      #ff9f00 100%
+    );
+
+  box-shadow:
+
+    0 0 25px
+    rgba(255,220,80,.9),
+
+    0 0 70px
+    rgba(255,190,40,.65),
+
+    0 0 130px
+    rgba(255,170,0,.35);
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  transition:
+    left 1s linear,
+    top 1s linear,
+    opacity 1s ease;
+}
+
+
+/* =====================================================
+   CLOUDS
+===================================================== */
+
+.cloud {
+
+  position: absolute;
+
+  width: 170px;
+
+  height: 55px;
+
+  background:
+    rgba(255,255,255,.7);
+
+  border-radius: 100px;
+
+  opacity: .75;
+
+  filter:
+    blur(.3px);
+
+  z-index: 7;
+
+  pointer-events: none;
+}
+
+
+.cloud::before,
+.cloud::after {
+
+  content: "";
+
+  position: absolute;
+
+  background: inherit;
+
+  border-radius: 50%;
+}
+
+
+.cloud::before {
+
+  width: 80px;
+  height: 80px;
+
+  left: 25px;
+
+  bottom: 12px;
+}
+
+
+.cloud::after {
+
+  width: 95px;
+  height: 95px;
+
+  right: 20px;
+
+  bottom: 10px;
+}
+
+
+.cloud-1 {
+
+  top: 20%;
+
+  left: -200px;
+
+  animation:
+    cloudMove1 40s linear infinite;
+}
+
+
+.cloud-2 {
+
+  top: 32%;
+
+  left: -300px;
+
+  transform:
+    scale(.65);
+
+  animation:
+    cloudMove2 55s linear infinite;
+}
+
+
+.cloud-3 {
+
+  top: 13%;
+
+  left: -400px;
+
+  transform:
+    scale(.45);
+
+  opacity: .5;
+
+  animation:
+    cloudMove3 70s linear infinite;
+}
+
+
+@keyframes cloudMove1 {
+
+  from {
+    left: -200px;
+  }
+
+  to {
+    left: 110%;
+  }
+
+}
+
+
+@keyframes cloudMove2 {
+
+  from {
+    left: -300px;
+  }
+
+  to {
+    left: 110%;
+  }
+
+}
+
+
+@keyframes cloudMove3 {
+
+  from {
+    left: -400px;
+  }
+
+  to {
+    left: 110%;
+  }
+
+}
+
+
+/* =====================================================
+   HORIZON
+===================================================== */
+
+.horizon {
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 22%;
+
+  background:
+    linear-gradient(
+      to top,
+      #06120e 0%,
+      #123c26 55%,
+      transparent 100%
+    );
+
+  clip-path:
+    polygon(
+      0 65%,
+      8% 55%,
+      15% 63%,
+      24% 47%,
+      33% 62%,
+      42% 44%,
+      50% 59%,
+      59% 48%,
+      68% 62%,
+      77% 46%,
+      86% 59%,
+      93% 50%,
+      100% 58%,
+      100% 100%,
+      0 100%
+    );
+
+  z-index: 8;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   EAST / WEST
+===================================================== */
+
+.direction {
+
+  position: absolute;
+
+  bottom: 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  z-index: 15;
+
+  opacity: .7;
+}
+
+
+.direction small {
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  opacity: .7;
+}
+
+
+.east {
+  left: 25px;
+}
+
+
+.west {
+  right: 25px;
+
+  text-align: right;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    width:
+      calc(100% - 24px);
+
+    top: 12px;
+  }
+
+  .hero {
+    padding-top: 92px;
+  }
+
+  .weather-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    max-width: 500px;
+  }
+
+  .sun-info {
+    max-width: 500px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .navbar {
+    height: 56px;
+
+    padding:
+      0 16px;
+
+    border-radius: 16px;
+  }
+
+  .logo {
+    font-size: 19px;
+  }
+
+  .live-status {
+    font-size: 9px;
+  }
+
+
+  .hero {
+
+    width: 92%;
+
+    padding-top: 78px;
+  }
+
+
+  .location {
+    font-size: 11px;
+  }
+
+
+  #currentTime {
+    font-size: 34px;
+  }
+
+
+  .weather-icon {
+    font-size: 45px;
+  }
+
+
+  .temperature {
+
+    font-size: 62px;
+
+    letter-spacing: -3px;
+  }
+
+
+  .weather-description {
+    font-size: 12px;
+  }
+
+
+  .weather-grid {
+
+    width: 100%;
+
+    gap: 8px;
+
+    margin-top: 16px;
+  }
+
+
+  .weather-card {
+
+    min-height: 65px;
+
+    padding: 9px;
+
+    gap: 8px;
+
+    border-radius: 13px;
+  }
+
+
+  .card-icon {
+
+    width: 31px;
+    height: 31px;
+
+    font-size: 16px;
+
+    border-radius: 9px;
+  }
+
+
+  .weather-card small {
+    font-size: 8px;
+  }
+
+
+  .weather-card strong {
+    font-size: 12px;
+  }
+
+
+  .sun-info {
+
+    gap: 8px;
+
+    font-size: 9px;
+  }
+
+
+  .direction {
+
+    bottom: 7%;
+
+    font-size: 8px;
+  }
+
+
+  .east {
+    left: 10px;
+  }
+
+
+  .west {
+    right: 10px;
+  }
+
+}
+
+
+@media (max-height: 700px) {
+
+  .hero {
+    padding-top: 82px;
+  }
+
+  .weather-grid {
+    margin-top: 10px;
+  }
+
+  .sun-info {
+    margin-top: 10px;
+  }
+
+}
+
